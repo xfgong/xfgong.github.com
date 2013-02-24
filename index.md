@@ -11,7 +11,7 @@ tagline: test tagline
       <div class="title"><a href="{{ post.url }}">{{post.title }}</a></div>
       <div class="date">Posted on {{ post.date | date: "%B %d %Y" }}</div>
       <div class="excerpt">{{ post.content | split:'<!--more-->'| first }}</div>
-      <p><a href="{{post.url}}">Read more »</a></p>
+      <p><a href="{{post.url}}">Read more &raquo;</a></p>
     </div>
     <hr />
   {% endfor %}

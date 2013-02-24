@@ -2,8 +2,8 @@
 layout: post
 title: "使用jekyll写博客"
 description: "使用jekyll写博客"
-category: [Tools]
-tags: [jekyll, github]
+category: Tools
+tags: jekyll github
 ---
 {% include JB/setup %}
 
@@ -21,6 +21,16 @@ tags: [jekyll, github]
 有了这几点对于博客来说已经完全足够了，不需要额外维护vps，简单可靠，并且github已经被G\*F\*W认证过，说明是个好网站。
 
 搭建jekyll的过程可以直接参考阮一峰的博文，写的比较详细，如果对自己的博客做一些装饰变得好看一些，可以参考其他人的[Site](https://github.com/mojombo/jekyll/wiki/Sites)，可以从里边选一个觉得不错的，然后直接clone到自己的repo中即可。
+
+jekyll的搭建过程和基本的使用方法我这里就不赘述了，网上一搜一大堆。不过在搭建过程中出现的问题，以及解决办法还是说一下，肯定有人会遇到类似问题。
+
+### 问题1 首页中如何显示文章摘要
+
+看了一下jekyll的api，post没有摘要的属性，不过这个可以通过对liquid模板稍微做一些调整，例如我在index.md中这样处理:
+    
+    {% raw %}
+    <div class="excerpt">{{ post.content | split:'<!--more-->'| first }}</div>
+    {% endraw %}
 
 几个有用的链接：
 
